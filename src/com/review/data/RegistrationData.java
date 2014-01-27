@@ -70,8 +70,7 @@ public class RegistrationData {
 			registrationData.setLogin(strArray[0].trim());
 			registrationData.setLogin(strArray[1].trim());
 			registrationData.setPassword(strArray[2].trim());
-			regList.add(registrationData);
-			
+			regList.add(registrationData);			
 		}
 		
 		for(int i=0; i<data.length;i++){
