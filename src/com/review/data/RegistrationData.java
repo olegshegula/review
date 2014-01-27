@@ -66,11 +66,11 @@ public class RegistrationData {
 		List<RegistrationData> regList = new ArrayList<RegistrationData>();
 		
 		for (String[] strArray:dataList){
-			RegistrationData loginData = new LoginData();
-			RegistrationData.setLogin(strArray[0].trim());
-			RegistrationData.setLogin(strArray[1].trim());
-			RegistrationData.setPassword(strArray[2].trim());
-			regList.add(RegistrationData);
+			RegistrationData registrationData = new RegistrationData();
+			registrationData.setLogin(strArray[0].trim());
+			registrationData.setLogin(strArray[1].trim());
+			registrationData.setPassword(strArray[2].trim());
+			regList.add(registrationData);
 			
 		}
 		
