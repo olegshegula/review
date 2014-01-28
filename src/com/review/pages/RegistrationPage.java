@@ -24,6 +24,18 @@ public class RegistrationPage {
 	@FindBy(id = "registerLoginForm-password")
 	private WebElement pass;
 
+	@CacheLookup
+	@FindBy(id = "terms")
+	private WebElement terms;
+
+	@CacheLookup
+	@FindBy(id = "newsletter")
+	private WebElement newsletter;
+
+	@CacheLookup
+	@FindBy(id = "frm-expert")
+	private WebElement frmexpert;
+
 	private WebDriver driver;
 
 	public RegistrationPage(WebDriver driver) {
@@ -50,15 +62,34 @@ public class RegistrationPage {
 		return this;
 	}
 
+	public RegistrationPage setIagree() {
+		terms.click();
+		return this;
+
+	}
+
+	public RegistrationPage setNewsLetter() {
+		newsletter.click();
+		return this;
+
+	}
+
+	public RegistrationPage setToBeExpert() {
+		frmexpert.click();
+		return this;
+
+	}
+
 	public RegisterSuccessfulPage clickLogin() {
 		submit.click();
 		return PageFactory.initElements(driver, RegisterSuccessfulPage.class);
 	}
 
-	public RegisterSuccessfulPage loginUser(RegistrationData registrationData) {
+	public RegisterSuccessfulPage registerUser(RegistrationData registrationData) {
 		return enterUserName(registrationData.getLogin())
 				.enterEmail(registrationData.getEmail())
-				.enterPassword(registrationData.getPassword()).clickLogin();
+				.enterPassword(registrationData.getPassword())
+				.clickLogin();
 
 	}
 }

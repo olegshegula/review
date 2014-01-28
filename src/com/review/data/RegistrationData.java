@@ -56,7 +56,7 @@ public class RegistrationData {
 		this.password = password;
 	}
 
-	@DataProvider (name= "loginCSVData")
+	@DataProvider (name= "registrationCSVData")
 	public static Object[][] getCSVData() throws IOException {
 		
 		CSVReader csvReader = new CSVReader(new FileReader(RegistrationData.class.getResource("regdata.csv").getPath()));
@@ -68,7 +68,7 @@ public class RegistrationData {
 		for (String[] strArray:dataList){
 			RegistrationData registrationData = new RegistrationData();
 			registrationData.setLogin(strArray[0].trim());
-			registrationData.setLogin(strArray[1].trim());
+			registrationData.setEmail(strArray[1].trim());
 			registrationData.setPassword(strArray[2].trim());
 			regList.add(registrationData);			
 		}
