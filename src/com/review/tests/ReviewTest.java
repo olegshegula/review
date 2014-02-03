@@ -48,7 +48,7 @@ public class ReviewTest extends Base {
 		RegisterSuccessfulPage successfullPage = PageFactory.initElements(
 				driver, RegisterSuccessfulPage.class);
 		Assert.assertTrue(successfullPage.isSuccessfullRegistered());
-		Assert.assertTrue(successfullPage.isSuccessfullRegistered());
+		
 		successfullPage.clickSuccessfulMessageButtonClose();
 	}
 }
